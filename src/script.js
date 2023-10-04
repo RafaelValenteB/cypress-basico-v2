@@ -3,20 +3,20 @@ let isPhoneRequired = false
 const phoneLabelSpan = document.querySelector('.phone-label-span')
 const phoneField = document.getElementById('phone')
 
-document.querySelector('#phone-checkbox')
+//document.querySelector('#phone-checkbox')
   .addEventListener('change', function() {
     if (this.checked) {
       phoneLabelSpan.style.display = 'inline'
       phoneField.required = !isPhoneRequired
       isPhoneRequired = !isPhoneRequired
-    } else {
+   // } else {
       phoneLabelSpan.style.display = 'none'
       phoneField.required = !isPhoneRequired
       isPhoneRequired = !isPhoneRequired
     }
   })
 
-document.querySelector('button[type="submit"]')
+//document.querySelector('button[type="submit"]')
   .addEventListener('click', function(event) {
     event.preventDefault()
     const firstNameField = document.getElementById('firstName')
@@ -35,7 +35,7 @@ document.querySelector('button[type="submit"]')
     if (isPhoneRequired && !phoneField.value) {
       return showAndHideErrorMessage()
     }
-    if (!emailField.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+   /// if (!emailField.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
       return showAndHideErrorMessage()
     }
     firstNameField.value = ''
@@ -59,11 +59,11 @@ function showAndHideErrorMessage() {
   const errorMessage = document.querySelector('.error')
   errorMessage.style.display = 'block'
   scroll(0,0)
-  hideMessageAfterTimeout(errorMessage)
+ //// hideMessageAfterTimeout(errorMessage)
   return
 }
 
-function hideMessageAfterTimeout(element) {
+///function hideMessageAfterTimeout(element) {
   setTimeout(function() {
     element.style.display = 'none'
   }, 3000)
